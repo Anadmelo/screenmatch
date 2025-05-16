@@ -1,3 +1,5 @@
+package principal;
+
 import Calculos.CalculadoraDeTempo;
 import Calculos.FiltroRecomendacao;
 import modelo.Episodio;
