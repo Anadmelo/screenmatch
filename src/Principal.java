@@ -8,9 +8,7 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("O poderoso chefão");
-        meuFilme.setAnoDeLancamento(1972);
+        Filme meuFilme = new Filme("O poderoso chefão", 1972);
         meuFilme.setDuracaoEmMinutos(175);
 
         meuFilme.exibeFichaTecnica();
@@ -21,18 +19,14 @@ public class Principal {
         System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.pegaMedia());
 
-        Serie minhaSerie = new Serie();
-        minhaSerie.setNome("Breaking Bad");
-        minhaSerie.setAnoDeLancamento(2008);
+        Serie minhaSerie = new Serie("Breaking Bad", 2008);
         minhaSerie.exibeFichaTecnica();
         minhaSerie.setTemporadas(5);
         minhaSerie.setEpisodiosPorTemporada(13);
         minhaSerie.setMinutosPorEpisodio(50);
         System.out.println("Duração em minutos para maratonar a serie: " + minhaSerie.getDuracaoEmMinutos());
 
-        Filme outroFilme = new Filme();
-        outroFilme.setNome("Clube da luta");
-        outroFilme.setAnoDeLancamento(1999);
+        Filme outroFilme = new Filme("Clube da luta", 1999);
         outroFilme.setDuracaoEmMinutos(166);
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
@@ -44,16 +38,14 @@ public class Principal {
         FiltroRecomendacao filtro = new FiltroRecomendacao();
         filtro.filtro(meuFilme);
 
-        Episodio episodio = new Episodio();
+        Episodio episodio = new Episodio("Piloto", 2008);
         episodio.setNumero(1);
         episodio.setSerie(minhaSerie);
         episodio.setTotalVisualizacoes(300);
         filtro.filtro(episodio);
 
-        var filmeDoPaulo = new Filme();
-        filmeDoPaulo.setNome("Dogville");
+        var filmeDoPaulo = new Filme("Dogville", 2003);
         filmeDoPaulo.setDuracaoEmMinutos(200);
-        filmeDoPaulo.setAnoDeLancamento(2003);
         filmeDoPaulo.avalia(10);
 
         ArrayList<Filme> listaDeFilmes = new ArrayList<>();
